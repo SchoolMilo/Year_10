@@ -1,0 +1,56 @@
+/**
+ *  @author Milo Mitchell-Brooks
+ *  @version v1
+ *  @aim To do calculations
+ */
+
+import java.util.Scanner;
+
+public class MagicThreeAssessment 
+{
+
+	public static void main(String[] args) 
+	{
+		// Create scanners
+		Scanner dbKeyboard = new Scanner(System.in);
+		
+		// Create variables
+		double dbEnteredNum = 0;
+		double dbResult = 0;
+		boolean bFailed = false;
+		
+		do 
+		{
+			if (bFailed == false) {
+				System.out.println("Enter a number between 1 and 10: ");
+				dbEnteredNum = dbKeyboard.nextDouble();
+			} else if (bFailed == true) {
+				System.out.println("Please enter a number between 1 and 10: ");
+				dbEnteredNum = dbKeyboard.nextDouble();
+			} // End of if 
+
+			
+			if (dbEnteredNum < 1 || dbEnteredNum > 10) 
+			{
+				System.out.println("The number you entered is not 1 to 10.");
+				bFailed = true;
+			} // End of if
+		} while (dbEnteredNum < 1 || dbEnteredNum > 10); // End of do-while
+		
+		// Calculations
+		dbResult = Math.pow(dbEnteredNum, 2);
+		dbResult = dbResult + dbEnteredNum;
+		dbResult = dbResult / dbEnteredNum;
+		dbResult = dbResult + 17;
+		dbResult = dbResult - dbEnteredNum;
+		dbResult = dbResult / 6;
+		
+		// Output
+		System.out.println("After a bit of magic...");
+		System.out.println("The result is " + dbResult);
+		
+		dbKeyboard.close();
+		
+	} // End of main
+
+} // End of class
